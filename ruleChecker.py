@@ -7,6 +7,7 @@ import time
 suggestion=[]
 versions=[]
 
+#--- Open required file ---#
 with open('package.json') as f:
     data = json.load(f)
 
@@ -15,7 +16,7 @@ with open('.eslintrc.json') as f:
 
 
 
-
+#--------Get rules -----------#
 def scraper():
     url="https://eslint.org/docs/rules/"
     headers={'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
@@ -45,6 +46,7 @@ def scraper():
         deprecated_dict[rules_deprecated_list[i][1:-1]]=rules_new_list[i][1:-1]
     
     return (all_rules,deprecated_dict)
+
 
 def latest_version():
     suggestion=[]
@@ -106,11 +108,10 @@ elif (eslint_version in versions):
     for item in deprecated:
         print("%s : %s " %(item,deprecated_dict[item]))
     print('/n')
-    print("Here are some suggestions from the lastest version that you are not using yet "   )
+    print("Here are a list of eslint rules that you are not using yet "   )
     print(str(suggestion))
 else:
     print("Wrong version")
 
-if ("indent-legacy" in all_rules):
-    print ("there")
+
 
