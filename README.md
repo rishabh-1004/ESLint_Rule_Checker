@@ -27,7 +27,9 @@ eslint version- 4.19.1
 
 **Sample Output:-**
 
+
 4.19.1
+
 You are using version 4.19.1 but latest version is 5.13.0
 
 These rules have been deprecated and following is there newer version
@@ -50,7 +52,9 @@ eslint version- 5.13.0
     generator-star
 
 **Sample Output:-**
+
 5.13.0
+
 You are using latest version
 These rules have been deprecated and following is there newer version
 indent-legacy : indent
